@@ -3,11 +3,12 @@ import psycopg2
 from psycopg2 import pool
 from dotenv import load_dotenv
 import os
+from flask_cors import CORS
 
 load_dotenv()
 
 app = Flask(__name__)
-
+CORS(app)
 # Database connection pool
 try:
     connection_pool = psycopg2.pool.SimpleConnectionPool(
